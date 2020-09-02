@@ -12,8 +12,13 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-weight: normal;
 }
 
+
+a{
+    color:inherit;
+}
 
 /* submit button */
 button {
@@ -38,7 +43,7 @@ ul{
 }
 
 body {
-    font-size:1.3rem;
+    font-size:1rem/1.3;
     background: var(--big_main);
     color:var(--text_dark);
 }
@@ -83,7 +88,7 @@ body {
     background:var(--darkred);
 }
 
-.banner form .msg{
+.banner form .message{
     position: absolute;
     bottom: -40px;
     left: 0;
@@ -91,63 +96,34 @@ body {
     min-height:40px;
 }
 
-
-@media screen and (max-width:700px){
-    .banner form {
-        flex-direction:column;
-    }
-
-
-.banner form input,.banner form button {
+.container {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.banner form button{
-    margin : 20px 0 0 0 ;
-}
-
-.banner form .msg {
-    position :static;
-    max-width: none;
-    min-height: 0;
-    margin-top:10px;
-}
-
+.api-cities {
+    margin: 70px 0 20px;
 
 }
 
 
-.api-cities{
-    margin: 50px 0 20px; 
-}
-
-.api-cities .cities{
-    display: grid;
-    grid-gap:32px 20px;
-    grid-template-columns:repeat(4,1fr);
-}
-
-@media screen and (max-width:1000px){
-    .api-cities .cities {
-    grid-template-columns:repeat(3,1fr); 
-    }
-}
-
-@media screen and (max-width:700px){
-    .api-cities .cities{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media screen and (max-width:500px){
-    .api-cities .cities{
-        grid-template-columns:repeat(1,1fr);
-    }
-}
 
 
 /* card styling when the weather data is reeived from the API */
 
+
+/* section 11 */
+
+.api-cities{
+    margin:70px 0 20px;
+}
+.api-cities .cities{
+    display:grid;
+    gap:32px 20px;
+    grid-template-columns:repeat(4,1fr);
+}
 .api-cities .city{
     position: relative;
     padding :40px 10%;
@@ -167,7 +143,7 @@ body {
     opacity: 0.3;
     border-radius: 20px;
     background:var(--text_light);
-
+    
 }
 
 .api-cities   figcaption {
@@ -178,6 +154,7 @@ body {
 .api-cities  .city-temp{
     font-size:5rem;
     font-weight: bold;
+    margin-top: 10px;
     letter-spacing:0.05em;
 }
 .api-cities .city sup{
@@ -196,4 +173,61 @@ body {
     margin-top: 10px;
     width:100px;
     height:100px;
+
 }
+
+    /* media queries */
+    
+    @media screen and (max-width:1000px){
+    
+        body{
+            padding: 30px;
+        }
+        .api-cities .cities {
+        grid-template-columns:repeat(3,1fr); 
+        }
+    }
+    
+    @media screen and (max-width:700px){
+    
+        .heading,.api-cities .city-temp{
+            font-size:3em;
+        }
+    
+        .api-cities{
+            margin-top:20px;
+        }
+        
+        .banner form {
+            flex-direction: column;
+            align-items: flex-start;
+    
+        }
+    
+    .banner form input,.banner  form button{
+        width: 100%;
+    }
+    .banner form button {
+        margin:20px 0 0 0;
+    }
+    .banner form .message{
+        position: static;
+        max-width: none;
+        min-height: 0;
+        margin-top:10px ;
+    }
+    
+    
+    .api-cities .cities{
+            grid-template-columns:repeat(2,1fr);
+        }
+    }
+    
+    @media screen and (max-width:500px){
+        body{
+            padding:15px;
+        }
+        .api-cities .cities{
+            grid-template-columns:repeat(1,1fr);
+        }
+    }
