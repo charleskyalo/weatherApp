@@ -3,10 +3,7 @@ const input = document.querySelector('.banner input');
 const msg = document.querySelector('.banner .message');
 const list = document.querySelector('.api-cities .cities');
 
-
 const apiKey = "0e72ebcbf2bd4cc2b6bbda3a14280a0d";
-console.log(msg);
-
 form.addEventListener('submit',
     e => {
         e.preventDefault();
