@@ -1,10 +1,10 @@
 :root{
-    --big_main:#0a1f44 ;
-    --text_light:#fff ;
+    --big_main:#1C2D8C;
+    --text_light:#f2f2f2 ;
     --text_medium: #53627c;
     --text_dark: #1e2432;
-    --red:#ff1e42;
-    --darkred:#c3112d;
+    --blue:#0C2659;
+    --dark:#000;
     --orange:#ff8c00;
 }
 
@@ -80,12 +80,12 @@ body {
     padding: 15px 20px;
     margin-left:15px;
     border-radius: 5px;
-    background:var(--red);
+    background:var(--blue);
     transition: background 0.3s ease-in-out;
 }
 
 .banner form button:hover{
-    background:var(--darkred);
+    background:var(--dark);
 }
 
 .banner form .message{
@@ -94,6 +94,7 @@ body {
     left: 0;
     max-width: 450px;
     min-height:40px;
+    font-size:2rem ;
 }
 
 .container {
@@ -178,14 +179,19 @@ body {
 
     /* media queries */
     
-    @media screen and (max-width:1000px){
-    
+    @media screen and (min-width:1000px){
+
+       
+     .banner form input {
+        width :50%;
+        }
         body{
             padding: 30px;
         }
         .api-cities .cities {
         grid-template-columns:repeat(3,1fr); 
         }
+
     }
     
     @media screen and (max-width:700px){
@@ -227,6 +233,11 @@ body {
         body{
             padding:15px;
         }
+
+        .banner form input{
+font-size:1em;
+        }
+            
         .api-cities .cities{
             grid-template-columns:repeat(1,1fr);
         }
