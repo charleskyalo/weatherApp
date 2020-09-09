@@ -179,11 +179,12 @@ body {
 
     /* media queries */
     
-    @media screen and (min-width:1000px){
+    @media screen and (min-width:700px){
 
        
      .banner form input {
         width :50%;
+        font-size:1.5rem;
         }
         body{
             padding: 30px;
