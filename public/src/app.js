@@ -1,3 +1,13 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('serviceWorker.js').then(registration => {
+        console.log("service worker registered ");
+        console.log(registration);
+    }).catch(error => {
+        console.log("service worker registration failed");
+        console.log(error);
+    });
+}
+
 const form = document.querySelector('.banner form');
 const input = document.querySelector('.banner input');
 const msg = document.querySelector('.banner .message');
