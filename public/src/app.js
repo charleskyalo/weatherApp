@@ -1,10 +1,8 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('serviceWorker.js').then(registration => {
         console.log("service worker registered ");
-        console.log(registration);
     }).catch(error => {
         console.log("service worker registration failed");
-        console.log(error);
     });
 }
 
@@ -19,8 +17,41 @@ form.addEventListener('submit',
         e.preventDefault();
         const inputVal = input.value;
 
-        console.log(inputVal);
-        /* fetch daat from the AP1 */
+        const listItems = list.querySelectorAll(".api-cities .city");
+        console.log(listItems);
+        const listItemsArray = Array.from(listItems);
+
+        if (listItemsArray.length > 0) {
+            const filteredArray = listItemsArray.filter(el => {
+                let content = "";
+                //kenya
+                if (inputVal.includes(",")) {
+                    //we can only keep the first art of the input.
+                    if (inputVal.split(",")[1].length > 2) {
+                        inputVal = inputVal.split(",")[0];
+                        content = el
+                            .querySelector(".city-name span")
+                            .textContent.toLowerCase();
+                    } else {
+                        content = el.querySelector(".city-name").dataset.name.toLowerCase();
+                    }
+                } else {
+                    //kenya
+                    content = el.querySelector(".city-name span").textContent.toLowerCase();
+                }
+                return content == inputVal.toLowerCase();
+            });
+
+            if (filteredArray.length > 0) {
+                msg.textContent = `You already know the weather for ${
+        filteredArray[0].querySelector(".city-name span").textContent
+      } ...otherwise be more specific by providing the country code as well 😉`;
+                form.reset();
+                input.focus();
+                return;
+            }
+        }
+        /* fetch data from the AP1 */
 
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
@@ -28,7 +59,6 @@ form.addEventListener('submit',
             .then(response => response.json())
             .then(data => {
                 /* manipulate the data fron here */
-                console.log(data);
                 const {
                     main,
                     name,
