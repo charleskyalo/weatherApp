@@ -1,8 +1,9 @@
+let message ;
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('serviceWorker.js').then(registration => {
-        console.log("service worker registered ");
+        message = ("service worker registered ");
     }).catch(error => {
-        console.log("service worker registration failed");
+        message = ("service worker registration failed");
     });
 }
 
@@ -18,7 +19,7 @@ form.addEventListener('submit',
         const inputVal = input.value;
 
         const listItems = list.querySelectorAll(".api-cities .city");
-        console.log(listItems);
+       
         const listItemsArray = Array.from(listItems);
 
         if (listItemsArray.length > 0) {
