@@ -4,7 +4,6 @@
 
 ## The smash it application is a progressive web app (PWA)
 
-=======
 [view smash.it App on you devices ](https://smashitweatherapp-14f98.firebaseapp.com/)
 
 ## How the app looks on mobile
