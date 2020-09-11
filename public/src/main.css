@@ -94,7 +94,7 @@ body {
     left: 0;
     max-width: 450px;
     min-height:40px;
-    font-size:2rem ;
+    font-size:1rem ;
 }
 
 .container {
@@ -222,6 +222,7 @@ body {
         max-width: none;
         min-height: 0;
         margin-top:10px ;
+        font-size: 1rem;
     }
     
     
