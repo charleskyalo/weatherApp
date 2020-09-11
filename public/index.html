@@ -8,8 +8,32 @@
      <link rel="manifest" href="./manifest.json">
     <title>smashit WeatherApp</title>
     <link rel="stylesheet" href="./src/main.css">
-
     <link rel="apple-touch-icon" href="images/smashit192.png">
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB1VLoI5fjhex4Pw3egu9HVJ6WfQFaUFWM",
+    authDomain: "smashitweatherapp-14f98.firebaseapp.com",
+    databaseURL: "https://smashitweatherapp-14f98.firebaseio.com",
+    projectId: "smashitweatherapp-14f98",
+    storageBucket: "smashitweatherapp-14f98.appspot.com",
+    messagingSenderId: "806024600074",
+    appId: "1:806024600074:web:8bccea712814871f565df3",
+    measurementId: "G-1P3F2GETLK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="./src/app.js" defer></script>
 </head>
 <body>
 <section class="banner">
@@ -30,6 +54,6 @@
  </ul>
 </div>
 </section>
-<script src="./src/app.js"></script>
+
 </body>
 </html>
